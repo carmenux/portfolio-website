@@ -445,7 +445,6 @@ p {
 .tool-name { display: inline-flex; align-items: center; gap: 8px; }
 
 /* --- ABOUT PAGE STYLES --- */
-/* --- ABOUT PAGE STYLES --- */
 
 .about-intro {
   display: flex;
@@ -798,13 +797,24 @@ p {
         padding: 0 40px; 
     }
 
-    .project-cards-wrapper {
-        width: 100%;
-        max-width: 1216px;
-        margin: 0 auto;
-        padding: 0 40px; 
-        gap: 32px; 
-    }
+/* Inside your desktop @media query */
+
+.project-cards-wrapper {
+    width: 100%;
+    /* 1. Unset the max-width so the container reaches the screen edges */
+    max-width: unset; 
+    margin: 0;
+    
+    /* 2. Dynamic Padding Calculation:
+       (Screen Width - Max Content Width) / 2 + Grid Padding 
+       This ensures the first card aligns perfectly with your header. */
+    padding-left: max(40px, calc((100vw - 1216px) / 2 + 40px));
+    
+    /* Optional: Right padding to let cards scroll off smoothly */
+    padding-right: 40px; 
+    
+    gap: 32px; 
+}
 
     .project-card {
         width: 384px;
