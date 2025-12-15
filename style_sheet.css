@@ -169,6 +169,13 @@ p {
   z-index: 1001;
 }
 
+.nav-content-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 .brand-logo { display: flex; align-items: center; gap: 8px; color: var(--light); }
 .brand-icon { width: 40px; height: 32px; display: block; }
 
